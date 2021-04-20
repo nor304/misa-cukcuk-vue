@@ -64,7 +64,7 @@
             :key="employee.EmployeeId"
             @dblclick="trOnDbClick(employee.EmployeeId)"
             @click="trOnClick(employee.EmployeeId, employee.FullName)"
-          >
+            >
             <td>{{ employee.EmployeeCode }}</td>
             <td>{{ employee.FullName }}</td>
             <td>{{ employee.GenderName }}</td>
