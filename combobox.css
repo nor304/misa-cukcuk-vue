@@ -1,0 +1,142 @@
+* {
+    box-sizing: border-box;
+}
+
+.edialog {
+    padding: 24px;
+    position: absolute;
+    top: 42%;
+    left: 48%;
+    transform: translate(-50%, -50%);
+    width: 280px;
+    height: 200px;
+    border: #000 1px solid;
+    border-radius: 4px;
+    background-color: #ffffff;
+    padding-top: 40px;
+}
+
+    .edialog-header {
+        height: 60px;
+    }
+
+    .edialog-header {
+        height: 100px;
+    }
+
+    .edialog-header {
+        height: 40px;
+    }
+
+    .dialog-close-button {
+        position: absolute;
+        right: 24px;
+        top: 40px;
+    }
+
+    .cbName input {
+        position: relative;
+        height: 40px;
+        width: 200px;
+        margin-bottom: 10px;
+        border: 1px solid #e5e5e5;
+        padding: 16px;
+    }
+
+.cb-autocomplete {
+    position: relative;
+    display: inline-block;
+}
+
+.cb-autocomplete .field {
+    position: relative;
+    display: inline-block;
+}
+.cb-autocomplete .cb {
+    height: 40px;
+    font-size: 13px;
+    padding-left: 16px;
+    padding-right: 16px;
+    outline: none;
+    border: 1px solid #e5e5e5;
+    border-radius: 4px;
+}
+
+.cb-autocomplete .icon {
+    position: absolute;
+    height: 40px;
+    width: 40px;
+    top: 0px;
+    right: 0px;
+    background-image: url("chevron-down.png");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: 16px 16px;
+    border-left: 1px solid #e5e5e5;
+    cursor: pointer;
+}
+
+.cb-autocomplete .cb:focus, 
+.cb-autocomplete .cb:focus + .icon {
+    border-color: green;
+}
+
+.cb-autocomplete .datalist {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    border: 1px solid #e5e5e5;
+    width: 100%;
+    background-color: #fff;
+    position: absolute;
+}
+
+.cb-autocomplete .datalist.hide {
+    display: none;
+}
+
+.cb-autocomplete .datalist li {
+    height: 40px;
+    line-height: 40px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+}
+
+.cb-autocomplete .datalist li .item-icon {
+    display: inline-block;
+    height: 40px;
+    width: 40px;
+    background: none;
+}
+
+.cb-autocomplete .datalist li.selected {
+    background-color: green;
+}
+
+.cb-autocomplete .datalist li.selected .item-icon,
+.cb-autocomplete .datalist li.selected .item-text {
+    color: #fff;
+}
+
+.cb-autocomplete .datalist li.selected .item-icon {
+    background-image: url("icon-check.png");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: 16px 16px;
+}
+
+.cb-autocomplete .datalist li:hover,
+.cb-autocomplete .datalist li.hover {
+    background-color: #e5e5e5;
+}
+
+.cb-autocomplete .datalist li:hover .item-text,
+.cb-autocomplete .datalist li.hover .item-text {
+    color: #000;
+}
+
+.cb-autocomplete.error .cb, 
+.cb-autocomplete.error .icon {
+    border-color: #f20;
+}
