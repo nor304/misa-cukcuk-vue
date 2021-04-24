@@ -5,7 +5,7 @@ const list = [
 ];
 
 const cbBox = $('.cb-autocomplete');
-const dataListEle = cbBox.find('.datalist');
+const dataListElement = cbBox.find('.datalist');
 const combobox = cbBox.find('.cb');
 let index = -1; //Thứ tự phần tử trong combobox
 let selectedItem = null;
@@ -53,32 +53,32 @@ $(function () {
   //Click icon toggle
   cbBox.find('.icon').on('mousedown', function (e) {
       e.preventDefault();
-      if (dataListEle.hasClass('hide')) {
+      if (dataListElement.hasClass('hide')) {
           combobox.focus();
           bindDataListToHtml(list, false);
           index = -1;
       } else {
-          dataListEle.addClass('hide');
+          dataListElement.addClass('hide');
       }
   });
 
   //Sự kiện lose focus
   cbBox.on('focusout', function (e) {
       e.preventDefault();
-      dataListEle.addClass('hide');
+      dataListElement.addClass('hide');
   })
 
   //Sự kiện nhấn phím
   cbBox.on('keydown', function (e) {
       let keyCode = e.keyCode;
-      let count = dataListEle.find('li').length;
+      let count = dataListElement.find('li').length;
 
       if (keyCode == 40) {
           //Mũi tên xuống
           e.preventDefault();
           if (index < count - 1) {
-            dataListEle.find('li').eq(index).removeClass('hover');
-            dataListEle.find('li').eq(index + 1).addClass('hover');
+            dataListElement.find('li').eq(index).removeClass('hover');
+            dataListElement.find('li').eq(index + 1).addClass('hover');
             index++;
           }
 
@@ -86,14 +86,14 @@ $(function () {
           //Mũi tên lên
           e.preventDefault();
           if (index > 0) {
-              dataListEle.find('li').eq(index).removeClass('hover');
-              dataListEle.find('li').eq(index - 1).addClass('hover');
+              dataListElement.find('li').eq(index).removeClass('hover');
+              dataListElement.find('li').eq(index - 1).addClass('hover');
               index--;
           }
       } else if (keyCode == 13) {
           //Enter
           e.preventDefault();
-          let _this = dataListEle.find('li.hover');
+          let _this = dataListElement.find('li.hover');
           selectItemCombobox(_this);
       }
   });
@@ -102,13 +102,13 @@ $(function () {
 
 
 //Hàm bind data vào html cho danh sách combobox.
-//@param {Array} datalist danh sách hiện tại của combobox.
-//@param {Boolean} isInput Xác định đang nhập dữ liệu hay đang click vào icon toggle.
+//@param {Array} datalist : danh sách hiện tại của combobox.
+//@param {Boolean} isInput : Xác định đang nhập dữ liệu hay đang click vào icon toggle.
 function bindDataListToHtml(datalist, isInput) {
   if (isInput) {
       selectedItem = null;
   }
-  dataListEle.html('');
+  dataListElement.html('');
   datalist.forEach((item) => {
       var dataItem = $(`
           <li>
@@ -120,17 +120,17 @@ function bindDataListToHtml(datalist, isInput) {
           dataItem.addClass('selected');
       }
       dataItem.data(item);
-      dataItem.appendTo(dataListEle);
+      dataItem.appendTo(dataListElement);
   });
-  dataListEle.removeClass('hide');
+  dataListElement.removeClass('hide');
 }
 
 //Hàm chọn một item trong danh sách của combobox.
-//@param {Element} eleSelected Item được chọn trong danh sách của combobox.
+//@param {Element} eleSelected : Item được chọn trong danh sách của combobox.
 function selectItemCombobox(eleSelected) {
   let data = eleSelected.data();
   selectedItem = data;
   combobox.val(data.text);
   combobox.focus();
-  dataListEle.addClass('hide');
+  dataListElement.addClass('hide');
 }

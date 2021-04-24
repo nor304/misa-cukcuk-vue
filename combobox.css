@@ -34,24 +34,26 @@
         top: 40px;
     }
 
-    .cbName input {
-        position: relative;
-        height: 40px;
-        width: 200px;
-        margin-bottom: 10px;
-        border: 1px solid #e5e5e5;
-        padding: 16px;
-    }
+.cbName input[type=text] {
+    position: relative;
+    height: 40px;
+    width: 200px;
+    margin-bottom: 10px;
+    border: 1px solid #e5e5e5;
+    padding-left: 16px;
+    border-radius: 4px;
+}
+
+    .cbName input[type=text]:focus,
+    .cbName input[type=text].focus {
+        border-color: #019160;
+    }    
 
 .cb-autocomplete {
     position: relative;
     display: inline-block;
 }
 
-.cb-autocomplete .field {
-    position: relative;
-    display: inline-block;
-}
 .cb-autocomplete .cb {
     height: 40px;
     font-size: 13px;
@@ -68,7 +70,7 @@
     width: 40px;
     top: 0px;
     right: 0px;
-    background-image: url("chevron-down.png");
+    background-image: url("arrow-down.png");
     background-position: center;
     background-repeat: no-repeat;
     background-size: 16px 16px;
@@ -78,7 +80,7 @@
 
 .cb-autocomplete .cb:focus, 
 .cb-autocomplete .cb:focus + .icon {
-    border-color: green;
+    border-color: #019160;
 }
 
 .cb-autocomplete .datalist {
@@ -111,7 +113,7 @@
 }
 
 .cb-autocomplete .datalist li.selected {
-    background-color: green;
+    background-color: #019160;
 }
 
 .cb-autocomplete .datalist li.selected .item-icon,
@@ -120,7 +122,7 @@
 }
 
 .cb-autocomplete .datalist li.selected .item-icon {
-    background-image: url("icon-check.png");
+    background-image: url("check.png");
     background-position: center;
     background-repeat: no-repeat;
     background-size: 16px 16px;
